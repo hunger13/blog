@@ -39,6 +39,12 @@ ol {
     width: 100%;
 }
 
+.navWhite {
+    background-color: white;
+    transition: all 0.3s;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
 .navBar {
     padding: 20px, 16px, 20px, 16px;
 }

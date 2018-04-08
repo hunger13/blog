@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="navHeader">
+    <div id="navHeader" class="navHeader">
         <div class="navBar clearfix">
             <a class="logo" href="#" alt="logo">
                 <span class="rs">RS</span><span class="card">card</span>
@@ -190,5 +190,14 @@
 
     </section>
 </body>
+<script>
+    window.onscroll = function() {
+        var t = document.documentElement.scrollTop || document.body.scrollTop; //获取距离页面顶部的距离
+        var nav = document.getElementById("navHeader"); //获取div元素
+        nav.className = t > 20 ? "navWhite navHeader" : "navHeader";
+
+    }
+</script>
+
 
 </html>
