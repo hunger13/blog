@@ -3,20 +3,23 @@
 import Cocoa
 import Foundation
 
-func bucketSort(array: [Int]) -> [Int] {
+func countSort(array: [Int]) -> [Int] {
     var max = 0
-    var bucket = [Array<Int>]()
+    var min = 0
+    
+    var hash = [Array<Int>]()
     for i in 0..<array.count {
         max = array[i] > max ? array[i] : max
+        min = array[i] < min ? array[i] : min
     }
-    for _ in 0...max {
-        bucket.append([Int]())
+    for _ in min...max {
+        hash.append([Int]())
     }
     array.forEach { (number) in
-        bucket[number].append(number)
+        hash[number].append(number)
     }
     var arr = [Int]()
-    bucket.forEach { (number) in
+    hash.forEach { (number) in
         arr += number
     }
     return arr
@@ -24,4 +27,4 @@ func bucketSort(array: [Int]) -> [Int] {
 
 let numbers = [2,4,2,1,2,5,3,1]
 
-print(bucketSort(array: numbers))
+print(countSort(array: numbers))
