@@ -52,6 +52,10 @@
         saveMessage: function() {
             let c = this.view.form.querySelector('input[name=content]').value
             let n = this.view.form.querySelector('input[name=name]').value
+            if (c.length < 1 || n.length < 1) {
+                alert('用户名或内容不能为空')
+                return
+            }
             this.model.save(n, c).then((obj) => {
                 this.view.form.querySelector('input[name=content]').value = null
                 this.view.addList(obj.attributes.name, obj.attributes.content)
