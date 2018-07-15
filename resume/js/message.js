@@ -52,7 +52,7 @@
         saveMessage: function() {
             let c = this.view.form.querySelector('input[name=content]').value
             let n = this.view.form.querySelector('input[name=name]').value
-            if (c.length < 1 || n.length < 1) {
+            if (c.trim().length < 1 || n.trim().length < 1) {
                 alert('用户名或内容不能为空')
                 return
             }
